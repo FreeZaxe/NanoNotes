@@ -2,10 +2,12 @@ QT += widgets
 
 SOURCES += \
     main.cpp \
-    menu.cpp
+    menu.cpp \
+    nouvellenote.cpp
 
 HEADERS += \
-    menu.h
+    menu.h \
+    nouvellenote.h
 
 FORMS +=
 

@@ -1,22 +1,21 @@
-#ifndef DEF_MENU
-#define DEF_MENU
+#ifndef NOUVELLENOTE_H
+#define NOUVELLENOTE_H
 
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
 
-class Menu : public QWidget
+class NouvelleNote : public QWidget
 {
     Q_OBJECT
 
     public:
-    Menu();
+    NouvelleNote();
 
     public slots:
-    void ouvrirNote();
+
 
     private:
-    QPushButton *m_nouvelleNote;
 
 };
 #endif
