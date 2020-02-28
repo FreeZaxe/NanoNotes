@@ -2,6 +2,9 @@
 #include "nouvellenote.h"
 #include <QApplication>
 
+//la doc : https://doc.qt.io/
+
+
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);

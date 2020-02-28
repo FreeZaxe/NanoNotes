@@ -11,12 +11,14 @@ Menu::Menu() : QWidget()
     m_nouvelleNote = new QPushButton("Nouvelle note", this);
 
     m_nouvelleNote->setCursor(Qt::PointingHandCursor); //change le type curseur
-    m_nouvelleNote->move(990, 670);
+    m_nouvelleNote->move(500, 450);
     m_nouvelleNote->setToolTip("Crée une nouvelle Note");
 
     QObject::connect(m_nouvelleNote, SIGNAL(clicked()), this, SLOT(ouvrirNote())); //connecte le bouton à la fonction ouvrirNote
     //------------------------------------------------------
 
+
+    //il faut rajouter tout le texte et l'interface ici
 
 
 }

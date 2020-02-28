@@ -16,7 +16,6 @@ class NouvelleNote : public QWidget
 
     public slots:
 
-
     private:
     QPushButton *m_sauvegarder;
     QTextEdit *m_note;
