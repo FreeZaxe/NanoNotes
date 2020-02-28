@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QPushButton>
 
+
 class Menu : public QWidget
 {
     Q_OBJECT
@@ -17,6 +18,7 @@ class Menu : public QWidget
 
     private:
     QPushButton *m_nouvelleNote;
+
 
 };
 #endif

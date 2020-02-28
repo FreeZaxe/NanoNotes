@@ -4,6 +4,8 @@
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
+#include <QTextEdit>
+
 
 class NouvelleNote : public QWidget
 {
@@ -16,6 +18,9 @@ class NouvelleNote : public QWidget
 
 
     private:
+    QPushButton *m_sauvegarder;
+    QTextEdit *m_note;
+
 
 };
 #endif

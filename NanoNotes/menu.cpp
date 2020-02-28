@@ -2,6 +2,7 @@
 #include "nouvellenote.h"
 #include <QApplication>
 
+
 Menu::Menu() : QWidget()
 {
     setFixedSize(1080,720); //fixe la taille de la fenêtre
@@ -20,8 +21,8 @@ Menu::Menu() : QWidget()
 
 }
 
-void Menu::ouvrirNote() //fonction ouvrirNote (pour l'instant ouvre la fenêtre de création d'une nouvelle note (ca marche à moitié la fenêtre se referme))
+void Menu::ouvrirNote() //fonction ouvrirNote, ouvre la fenêtre de création d'une nouvelle note
 {
-    NouvelleNote fenetreNote;
-    fenetreNote.show();
+    NouvelleNote *fenetreNote = new NouvelleNote;
+    fenetreNote->show();
 }
