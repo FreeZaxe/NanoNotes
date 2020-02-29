@@ -22,6 +22,7 @@ NouvelleNote::NouvelleNote() : QWidget()
     //m_note->setTextColor();       ca peut etre utile par la suite
     //m_note->setFontFamily();      ca aussi
     m_note->setText("Ecrivez votre note ici");
+    m_note->resize(580,400);
     m_note->move(20,40);
 
     //-----------------------------------------------
