@@ -6,6 +6,8 @@
 Menu::Menu() : QWidget()
 {
     setFixedSize(1080,720); //fixe la taille de la fenêtre
+    //showMaximized()  //pour mettre en fullscreen
+
 
     //----------------bouton de nouvelle note---------------
     m_nouvelleNote = new QPushButton("Nouvelle note", this);
@@ -18,7 +20,7 @@ Menu::Menu() : QWidget()
     //------------------------------------------------------
 
 
-    //il faut rajouter tout le texte et l'interface ici
+    //il faut rajouter tout le texte et l'interface ici (mettre un bouton pour quitter comme dans "nouvellenote.cpp")
 
 
 }
