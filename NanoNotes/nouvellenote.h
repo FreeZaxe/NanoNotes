@@ -5,6 +5,7 @@
 #include <QWidget>
 #include <QPushButton>
 #include <QTextEdit>
+#include <QFontComboBox>
 
 
 class NouvelleNote : public QWidget
@@ -17,10 +18,13 @@ class NouvelleNote : public QWidget
     public slots:
     void sauvegarder();
 
+
     private:
     QPushButton *m_sauvegarder;
     QPushButton *m_quitter;
     QTextEdit *m_note;
+    QFontComboBox *m_boitePolice;
+    QComboBox *m_boiteCouleur;
 
 
 };

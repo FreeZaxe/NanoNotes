@@ -2,12 +2,12 @@
 
 #include <iostream>
 #include <fstream>
-#include <QFile>
-
 #include <QApplication>
 #include <QPushButton>
+#include <QFontComboBox>
 #include <QTextEdit>
 #include <QString>
+#include <QColor>
 
 NouvelleNote::NouvelleNote() : QWidget()
 {
@@ -39,11 +39,29 @@ NouvelleNote::NouvelleNote() : QWidget()
     //----------------Zone de texte------------------
     m_note = new QTextEdit(this);
 
-    //m_note->setTextColor();       //ca peut etre utile par la suite
-    //m_note->setFontFamily();      ca aussi
+    m_note->setTextColor("325, 255, 255");
+    //m_note->setFontFamily();
     m_note->setPlaceholderText("Ecrivez votre note ici");
     m_note->resize(580,400);
-    m_note->move(20,10);
+    m_note->move(20,40);
+
+    //-----------------------------------------------
+
+    //-------------Choix de la police----------------
+    m_boitePolice = new QFontComboBox(this);
+
+    m_boitePolice->resize(120, 20);
+    m_boitePolice->move(20, 10);
+
+    //-----------------------------------------------
+
+    //-------------Choix de la couleur---------------
+    m_boiteCouleur = new QComboBox(this);
+
+    m_boiteCouleur->resize(120, 20);
+    m_boiteCouleur->move(150, 10);
+
+    //il faut rajouter un choix avec toutes les couleurs
 
     //-----------------------------------------------
 }
