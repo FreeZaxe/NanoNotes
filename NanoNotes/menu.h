@@ -4,6 +4,9 @@
 #include <QApplication>
 #include <QWidget>
 #include <QPushButton>
+#include <QLabel>
+#include <QTimer>
+#include <QTime>
 
 
 class Menu : public QWidget
@@ -18,7 +21,13 @@ class Menu : public QWidget
 
     private:
     QPushButton *m_nouvelleNote;
+    QPushButton *m_quitter;
+    QTimer *timer_1s;
+    QLabel *m_clock;
+    QLabel *m_ouvrirNote;
 
+    private slots:
+    void UpdateTime();
 
 };
 #endif

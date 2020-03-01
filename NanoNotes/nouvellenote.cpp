@@ -68,7 +68,7 @@ NouvelleNote::NouvelleNote() : QWidget()
 
 void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
 {
-    std::string const fichierSauvegarde("debug/sauvegardes/save.txt");
+    std::string const fichierSauvegarde("sauvegardes/save.txt");
     std::ofstream sauvegarde(fichierSauvegarde.c_str());
 
     if(sauvegarde)
