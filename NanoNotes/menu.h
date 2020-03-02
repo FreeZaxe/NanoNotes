@@ -23,6 +23,7 @@ class Menu : public QWidget
     QPushButton *m_nouvelleNote;
     QPushButton *m_quitter;
     QTimer *timer_1s;
+    //QLabel *m_bgMenu;
     QLabel *m_clock;
     QLabel *m_ouvrirNote;
 

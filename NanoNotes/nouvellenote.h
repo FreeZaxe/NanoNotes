@@ -17,7 +17,7 @@ class NouvelleNote : public QWidget
 
     public slots:
     void sauvegarder();
-
+    void changerCouleur();
 
     private:
     QPushButton *m_sauvegarder;

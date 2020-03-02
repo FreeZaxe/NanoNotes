@@ -14,6 +14,7 @@ NouvelleNote::NouvelleNote() : QWidget()
     setFixedSize(720,480);
 
 
+
     //--------------bouton de sauvegarde-------------
     m_sauvegarder = new QPushButton("Sauvegarder", this);
 
@@ -51,6 +52,7 @@ NouvelleNote::NouvelleNote() : QWidget()
     m_boitePolice = new QFontComboBox(this);
 
     m_boitePolice->resize(120, 20);
+    m_boitePolice->setEditable(false);
     m_boitePolice->move(20, 10);
 
     //-----------------------------------------------
@@ -59,16 +61,35 @@ NouvelleNote::NouvelleNote() : QWidget()
     m_boiteCouleur = new QComboBox(this);
 
     m_boiteCouleur->resize(120, 20);
+    m_boiteCouleur->setEditable(false);
     m_boiteCouleur->move(150, 10);
 
-    //il faut rajouter un choix avec toutes les couleurs
+    QString rouge = "Rouge";
+    QString orange = "Orange";
+    QString jaune = "Jaune";
+    QString vert = "Vert";
+    QString bleuClair = "Bleu Clair";
+    QString bleuFonce = "Bleu Foncé";
+    QString violet = "Violet";
+    QString rose = "Rose";
+
+    m_boiteCouleur->addItem(rouge);
+    m_boiteCouleur->addItem(orange);
+    m_boiteCouleur->addItem(jaune);
+    m_boiteCouleur->addItem(vert);
+    m_boiteCouleur->addItem(bleuClair);
+    m_boiteCouleur->addItem(bleuFonce);
+    m_boiteCouleur->addItem(violet);
+    m_boiteCouleur->addItem(rose);
+
+    QObject::connect(m_boiteCouleur, SIGNAL(currentTextChange()), this, SLOT(changerCouleur(c)));
 
     //-----------------------------------------------
 }
 
 void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
 {
-    std::string const fichierSauvegarde("sauvegardes/save.txt");
+    std::string const fichierSauvegarde("debug/sauvegardes/save.txt");
     std::ofstream sauvegarde(fichierSauvegarde.c_str());
 
     if(sauvegarde)
@@ -85,4 +106,9 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
     {
         std::cout << "ERREUR : Impossible d'ouvrir le fichier." << std::endl;
     }
+}
+
+void NouvelleNote::changerCouleur()
+{
+    std::cout << "c'estbon" << std::endl;
 }

@@ -19,6 +19,7 @@ int main(int argc, char *argv[])
 
 
     Menu fenetreMenu;       //Crée la fenêtre du menu
+
     fenetreMenu.show();     //Ouvre cette fenêtre
 
 

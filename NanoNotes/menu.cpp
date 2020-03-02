@@ -10,6 +10,8 @@ Menu::Menu() : QWidget()
     setFixedSize(1080,720); //fixe la taille de la fenêtre
     //showMaximized()  //pour mettre en fullscreen
 
+    //m_bgMenu = new QLabel(&fenetreMenu);
+    //m_bgMenu->setPixmap(QPixmap("debug/assets/backgroundMenu.png"));
 
     timer_1s = new QTimer(this);
     QObject::connect(timer_1s, SIGNAL(timeout()), this, SLOT(UpdateTime()));
@@ -29,13 +31,13 @@ Menu::Menu() : QWidget()
     m_clock->move(1020, 700);
     m_clock->setFixedWidth(600);
     m_clock->setTextFormat(Qt::RichText);
-    m_clock->setStyleSheet("font-weight: bold; color: magenta");
+    m_clock->setStyleSheet("font-weight: bold; color: black");
 
     //-----------------affichage txt ouvrir Note------------
     m_ouvrirNote = new QLabel("Ouvrir Une Note :", this);
     m_ouvrirNote->move(50,50);
     m_ouvrirNote->setFixedWidth(500);
-    m_ouvrirNote->setStyleSheet("font-weight: bold; color: magenta");
+    m_ouvrirNote->setStyleSheet("font-weight: bold; color: black");
 
     //---------------bouton pour quitter-------------
     m_quitter = new QPushButton("Tout Quitter", this);
