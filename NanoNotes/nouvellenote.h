@@ -6,6 +6,7 @@
 #include <QPushButton>
 #include <QTextEdit>
 #include <QFontComboBox>
+#include <QPainter>
 
 
 class NouvelleNote : public QWidget
@@ -27,6 +28,7 @@ class NouvelleNote : public QWidget
     QSlider *m_sliderR;
     QSlider *m_sliderG;
     QSlider *m_sliderB;
+    QPainter *m_rectangleCouleur;
 
 };
 #endif

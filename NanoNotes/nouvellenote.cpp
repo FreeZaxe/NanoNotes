@@ -9,6 +9,7 @@
 #include <QString>
 #include <QColor>
 #include <QSlider>
+#include <QPainter>
 
 NouvelleNote::NouvelleNote() : QWidget()
 {
@@ -58,7 +59,6 @@ NouvelleNote::NouvelleNote() : QWidget()
     //-----------------------------------------------
 
     //-------------Choix de la couleur---------------
-
     m_sliderR = new QSlider(Qt::Horizontal, this);
     m_sliderG = new QSlider(Qt::Horizontal, this);
     m_sliderB = new QSlider(Qt::Horizontal, this);
@@ -71,9 +71,33 @@ NouvelleNote::NouvelleNote() : QWidget()
     m_sliderG->setRange(0, 255);
     m_sliderB->setRange(0, 255);
 
-    QObject::connect(m_sliderR, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
-    QObject::connect(m_sliderG, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
-    QObject::connect(m_sliderB, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
+    QObject::connect(m_sliderR, &QSlider::valueChanged, this, [this](int r){
+
+        auto g = m_sliderG->value();
+        auto b = m_sliderB->value();
+
+        this->changerCouleur(r, g, b);
+    });
+    QObject::connect(m_sliderG, &QSlider::valueChanged, this, [this](int g){
+
+        auto r = m_sliderR->value();
+        auto b = m_sliderB->value();
+
+        this->changerCouleur(r, g, b);
+    });
+    QObject::connect(m_sliderB, &QSlider::valueChanged, this, [this](int b){
+
+        auto r = m_sliderR->value();
+        auto g = m_sliderG->value();
+
+        this->changerCouleur(r, g, b);
+    });
+
+    //- - - - Rectangle qui annonce la couleur - - - -
+    m_rectangleCouleur = new QPainter(this);
+
+    m_rectangleCouleur->fillRect(560, 190, 40, 40, QColor(0, 0, 0, 255)); //marche pas encore
+    //- - - - - - - - - - - - - - - - - - - - - - - -
 
     //-----------------------------------------------
 }
