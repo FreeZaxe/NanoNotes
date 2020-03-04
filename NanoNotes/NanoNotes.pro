@@ -3,7 +3,8 @@ QT += widgets
 SOURCES += \
     main.cpp \
     menu.cpp \
-    nouvellenote.cpp
+    nouvellenote.cpp \
+    randomthings.cpp
 
 HEADERS += \
     menu.h \

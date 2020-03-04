@@ -17,15 +17,16 @@ class NouvelleNote : public QWidget
 
     public slots:
     void sauvegarder();
-    void changerCouleur();
+    void changerCouleur(int r, int g, int b);
 
     private:
     QPushButton *m_sauvegarder;
     QPushButton *m_quitter;
     QTextEdit *m_note;
     QFontComboBox *m_boitePolice;
-    QComboBox *m_boiteCouleur;
-
+    QSlider *m_sliderR;
+    QSlider *m_sliderG;
+    QSlider *m_sliderB;
 
 };
 #endif

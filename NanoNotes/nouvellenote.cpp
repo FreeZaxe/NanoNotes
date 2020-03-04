@@ -8,6 +8,7 @@
 #include <QTextEdit>
 #include <QString>
 #include <QColor>
+#include <QSlider>
 
 NouvelleNote::NouvelleNote() : QWidget()
 {
@@ -20,7 +21,7 @@ NouvelleNote::NouvelleNote() : QWidget()
 
     m_sauvegarder->setCursor(Qt::PointingHandCursor);  //https://doc.qt.io/qt-5/qt.html#CursorShape-enum pour avoir tout les types de curseurs
     m_sauvegarder->setToolTip("Sauvegarde votre Note");
-    m_sauvegarder->move(630,10);
+    m_sauvegarder->move(540,10);
 
     QObject::connect(m_sauvegarder, SIGNAL(clicked()), this, SLOT(sauvegarder()));
     //-----------------------------------------------
@@ -30,7 +31,7 @@ NouvelleNote::NouvelleNote() : QWidget()
 
     m_quitter->setCursor(Qt::ForbiddenCursor);
     m_quitter->setToolTip("Ferme le logiciel !");
-    m_quitter->move(630,50);
+    m_quitter->move(630,10);
 
     QObject::connect(m_quitter, SIGNAL(clicked()), qApp, SLOT(quit()));
 
@@ -40,10 +41,9 @@ NouvelleNote::NouvelleNote() : QWidget()
     //----------------Zone de texte------------------
     m_note = new QTextEdit(this);
 
-    m_note->setTextColor("325, 255, 255");
     //m_note->setFontFamily();
     m_note->setPlaceholderText("Ecrivez votre note ici");
-    m_note->resize(580,400);
+    m_note->resize(500,400);
     m_note->move(20,40);
 
     //-----------------------------------------------
@@ -58,31 +58,22 @@ NouvelleNote::NouvelleNote() : QWidget()
     //-----------------------------------------------
 
     //-------------Choix de la couleur---------------
-    m_boiteCouleur = new QComboBox(this);
 
-    m_boiteCouleur->resize(120, 20);
-    m_boiteCouleur->setEditable(false);
-    m_boiteCouleur->move(150, 10);
+    m_sliderR = new QSlider(Qt::Horizontal, this);
+    m_sliderG = new QSlider(Qt::Horizontal, this);
+    m_sliderB = new QSlider(Qt::Horizontal, this);
 
-    QString rouge = "Rouge";
-    QString orange = "Orange";
-    QString jaune = "Jaune";
-    QString vert = "Vert";
-    QString bleuClair = "Bleu Clair";
-    QString bleuFonce = "Bleu Foncé";
-    QString violet = "Violet";
-    QString rose = "Rose";
+    m_sliderR->setGeometry(550, 100, 145, 20);
+    m_sliderG->setGeometry(550, 130, 145, 20);
+    m_sliderB->setGeometry(550, 160, 145, 20);
 
-    m_boiteCouleur->addItem(rouge);
-    m_boiteCouleur->addItem(orange);
-    m_boiteCouleur->addItem(jaune);
-    m_boiteCouleur->addItem(vert);
-    m_boiteCouleur->addItem(bleuClair);
-    m_boiteCouleur->addItem(bleuFonce);
-    m_boiteCouleur->addItem(violet);
-    m_boiteCouleur->addItem(rose);
+    m_sliderR->setRange(0, 255);
+    m_sliderG->setRange(0, 255);
+    m_sliderB->setRange(0, 255);
 
-    QObject::connect(m_boiteCouleur, SIGNAL(currentTextChange()), this, SLOT(changerCouleur(c)));
+    QObject::connect(m_sliderR, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
+    QObject::connect(m_sliderG, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
+    QObject::connect(m_sliderB, SIGNAL(valueChanged(int)), this, SLOT(changerCouleur()));
 
     //-----------------------------------------------
 }
@@ -108,7 +99,7 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
     }
 }
 
-void NouvelleNote::changerCouleur()
+void NouvelleNote::changerCouleur(int r, int g, int b)
 {
-    std::cout << "c'estbon" << std::endl;
+    m_note->setTextColor(QColor(r, g, b, 255));
 }

@@ -22,8 +22,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_NouvelleNote_t {
-    QByteArrayData data[4];
-    char stringdata0[41];
+    QByteArrayData data[7];
+    char stringdata0[47];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -35,10 +35,14 @@ static const qt_meta_stringdata_NouvelleNote_t qt_meta_stringdata_NouvelleNote =
 QT_MOC_LITERAL(0, 0, 12), // "NouvelleNote"
 QT_MOC_LITERAL(1, 13, 11), // "sauvegarder"
 QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 14) // "changerCouleur"
+QT_MOC_LITERAL(3, 26, 14), // "changerCouleur"
+QT_MOC_LITERAL(4, 41, 1), // "r"
+QT_MOC_LITERAL(5, 43, 1), // "g"
+QT_MOC_LITERAL(6, 45, 1) // "b"
 
     },
-    "NouvelleNote\0sauvegarder\0\0changerCouleur"
+    "NouvelleNote\0sauvegarder\0\0changerCouleur\0"
+    "r\0g\0b"
 };
 #undef QT_MOC_LITERAL
 
@@ -57,11 +61,11 @@ static const uint qt_meta_data_NouvelleNote[] = {
 
  // slots: name, argc, parameters, tag, flags
        1,    0,   24,    2, 0x0a /* Public */,
-       3,    0,   25,    2, 0x0a /* Public */,
+       3,    3,   25,    2, 0x0a /* Public */,
 
  // slots: parameters
     QMetaType::Void,
-    QMetaType::Void,
+    QMetaType::Void, QMetaType::Int, QMetaType::Int, QMetaType::Int,    4,    5,    6,
 
        0        // eod
 };
@@ -73,11 +77,10 @@ void NouvelleNote::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id
         Q_UNUSED(_t)
         switch (_id) {
         case 0: _t->sauvegarder(); break;
-        case 1: _t->changerCouleur(); break;
+        case 1: _t->changerCouleur((*reinterpret_cast< int(*)>(_a[1])),(*reinterpret_cast< int(*)>(_a[2])),(*reinterpret_cast< int(*)>(_a[3]))); break;
         default: ;
         }
     }
-    Q_UNUSED(_a);
 }
 
 QT_INIT_METAOBJECT const QMetaObject NouvelleNote::staticMetaObject = { {
