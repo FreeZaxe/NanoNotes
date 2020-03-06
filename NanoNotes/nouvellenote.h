@@ -30,5 +30,6 @@ class NouvelleNote : public QWidget
     QSlider *m_sliderB;
     QPainter *m_rectangleCouleur;
 
+
 };
 #endif
