@@ -1,5 +1,8 @@
 #include "nouvellenote.h"
+#include "quitter.h"
 
+#include <string>
+#include <sstream>
 #include <iostream>
 #include <fstream>
 #include <QApplication>
@@ -9,7 +12,6 @@
 #include <QString>
 #include <QColor>
 #include <QSlider>
-#include <QPainter>
 
 NouvelleNote::NouvelleNote() : QWidget()
 {
@@ -19,7 +21,7 @@ NouvelleNote::NouvelleNote() : QWidget()
     //--------------bouton de sauvegarde-------------
     m_sauvegarder = new QPushButton("Sauvegarder", this);
 
-    m_sauvegarder->setCursor(Qt::PointingHandCursor);  //https://doc.qt.io/qt-5/qt.html#CursorShape-enum pour avoir tout les types de curseurs
+    m_sauvegarder->setCursor(Qt::PointingHandCursor); //https://doc.qt.io/qt-5/qt.html#CursorShape-enum pour avoir tout les types de curseurs
     m_sauvegarder->setToolTip("Sauvegarde votre Note");
     m_sauvegarder->move(540,10);
 
@@ -32,12 +34,12 @@ NouvelleNote::NouvelleNote() : QWidget()
     //---------------bouton pour quitter-------------
     m_quitter = new QPushButton("Quitter", this);
 
-    m_quitter->setCursor(Qt::ForbiddenCursor);
+    m_quitter->setCursor(Qt::PointingHandCursor);
     m_quitter->setToolTip("Ferme le logiciel !");
     m_quitter->move(630,10);
 
-    QObject::connect(m_quitter, &QPushButton::clicked, qApp, [](){
-        qApp->quit();
+    QObject::connect(m_quitter, &QPushButton::clicked, this, [this](){
+        this->ouvrirFenQuit();
     });
     //-----------------------------------------------
 
@@ -96,11 +98,20 @@ NouvelleNote::NouvelleNote() : QWidget()
         this->changerCouleur(r, g, b);
     });
 
-    //- - - - Rectangle qui annonce la couleur - - - -
-    //m_rectangleCouleur = new QPainter(this);
+    //- - - - - - - Labels sliders - - - - - - - -
+    m_r = new QLabel("R :", this);
+    m_r->move(530, 100);
+    m_r->setStyleSheet("font-weight: bold; color : red");
 
-    //m_rectangleCouleur->fillRect(560, 190, 40, 40, QColor(0, 0, 0, 255)); //marche pas encore
-    //- - - - - - - - - - - - - - - - - - - - - - - -
+    m_g = new QLabel("G :", this);
+    m_g->move(530, 130);
+    m_g->setStyleSheet("font-weight: bold; color : green");
+
+    m_b = new QLabel("B :", this);
+    m_b->move(530, 160);
+    m_b->setStyleSheet("font-weight: bold; color : blue");
+    //- - - - - - - - - - - - - - - - - - - - - -
+
     //-----------------------------------------------
 }
 
@@ -113,15 +124,17 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
     if(nbrSauvegardes)
     {
         //- - - - - - - - - - - - - - - - Sauvegarde - - - - - - - - - - - - - - - - - - - - - -
-        char nChar;
-        nbrSauvegardes.get(nChar);
+        std::string nString;
+        nbrSauvegardes >> nString;  //prend le numéro de la prochaine note
 
-        int n = nChar;
+        int n;
+        std::istringstream(nString) >> n;   //le transforme en int pour pouvoir ajouter 1 à ce numéro une fois la note enregistré pour que
+                                            //la prochaine ai un autre numéro
+        nbrSauvegardes.close(); //ferme le fichier pour éviter les erreurs
 
-        nbrSauvegardes.close();
 
         std::string fichierSauvegarde("debug/sauvegardes/save");
-        fichierSauvegarde += n;     //on rajoute le numéro de la sauvegarde
+        fichierSauvegarde += nString;     //on rajoute le numéro de la sauvegarde
         fichierSauvegarde += ".txt";        //et le .txt qui spécifie le type de fichier
         std::ofstream sauvegarde(fichierSauvegarde.c_str());
 
@@ -132,20 +145,20 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
             QString noteQt = m_note->toPlainText(); //met tout le texte de la note dans une variable QString
             std::string note = noteQt.toStdString(); //passe le texte d'une variable QString à une variable string
 
-            sauvegarde << note; //met le texte de la variable string dans le fichier .txt
+            sauvegarde << note; //met le texte de la variable string dans le fichier .txtre
 
             sauvegarde.close();
 
         }
         else
         {
-            std::cout << "ERREUR [2] : Impossible d'ouvrir le fichier pour créer une nouvelle sauvegarde." << std::endl;
+            std::cout << "ERREUR [2] : Impossible d'ouvrir le fichier pour creer une nouvelle sauvegarde." << std::endl;
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
         //- - - - - - - - - - - Changement du numéro de la sauvegarde - - - - - - - - - - - - -
-        n = n + 1;  //ajoute 1 au numéro de la sauvegarde
+        n += 1;  //ajoute 1 au numéro de la sauvegarde
 
         std::ofstream nbrSauvegardes(fichierNombreSauvegarde.c_str());
 
@@ -166,4 +179,11 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
 void NouvelleNote::changerCouleur(int r, int g, int b) //fonction pour changer la couleur du texte
 {
     m_note->setTextColor(QColor(r, g, b, 255));
+
+}
+
+void NouvelleNote::ouvrirFenQuit() //fonction qui ouvre une fenetre pour demander si nous sommes bien sur de vouloir fermer le programme
+{
+    FenetreQuitter *fenetreQuitter = new FenetreQuitter;
+    fenetreQuitter->show();
 }

@@ -18,14 +18,16 @@ class Menu : public QWidget
 
     public slots:
     void ouvrirNote();
+    void ouvrirFenQuit();
 
     private:
     QPushButton *m_nouvelleNote;
     QPushButton *m_quitter;
     QTimer *timer_1s;
-    //QLabel *m_bgMenu;
+
     QLabel *m_clock;
     QLabel *m_ouvrirNote;
+    QLabel *m_nanoNoteTexte;
 
     private slots:
     void UpdateTime();

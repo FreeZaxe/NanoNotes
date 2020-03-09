@@ -1,5 +1,9 @@
 #include "menu.h"
-#include "nouvellenote.h"
+#include "premiereouverture.h"
+
+#include <fstream>
+#include <iostream>
+#include <sstream>
 #include <QApplication>
 #include <QPalette>
 
@@ -12,15 +16,50 @@
 
 //----------------------------------
 
+//-------------ERREURS--------------
+
+//----------------------------------
+
+
 
 int main(int argc, char *argv[])
 {
     QApplication app(argc, argv);
 
+    std::string const fichierFirstOp("debug/premiereouverture.txt");
+    std::ifstream firstOpening(fichierFirstOp.c_str());
 
-    Menu fenetreMenu;       //Crée la fenêtre du menu
+    if(firstOpening)
+    {
+        std::string s;
+        firstOpening >> s;  //même méthode que dans nouvellenote.cpp pour la sauvegarde
 
-    fenetreMenu.show();     //Ouvre cette fenêtre
+        int i;
+        std::istringstream(s) >> i;
+
+        firstOpening.close();
+
+        if(i==1)    //si le programme n'a jamais été ouvert, on ouvre la fenêtre de première ouverture
+        {
+            i -= 1;
+            std::ofstream firstOpening(fichierFirstOp.c_str());
+            firstOpening << i;
+            firstOpening.close();
+
+            PremiereOuverture *fenetreMenu = new PremiereOuverture;
+            fenetreMenu->show();
+
+        }
+        else    //sinon, il a déjà été ouvert, on ouvre le menu normalement
+        {
+            Menu *fenetreMenu = new Menu;
+            fenetreMenu->show();
+        }
+    }
+    else
+    {
+        std::cout << "ERREUR [3] : Impossible d'ouvrir le fichier pour verifier la premiere ouverture." << std::endl;
+    }
 
 
     return app.exec();

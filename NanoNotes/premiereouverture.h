@@ -1,11 +1,21 @@
 #ifndef FIRSTOPENNING_H
 #define FIRSTOPENNING_H
 
+#include <QApplication>
+#include <QWidget>
+#include <QPushButton>
 
-class firstopenning
+class PremiereOuverture : public QWidget
 {
-public:
-    firstopenning();
-};
+    Q_OBJECT
 
-#endif // FIRSTOPENNING_H
+    public:
+    PremiereOuverture();
+
+    public slots:
+    void demarer();
+
+    private:
+    QPushButton *m_boutonDemarer;
+};
+#endif

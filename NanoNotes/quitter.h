@@ -1,11 +1,23 @@
 #ifndef FENETREQUITTER_H
 #define FENETREQUITTER_H
 
+#include <QApplication>
+#include <QPushButton>
+#include <QLabel>
 
-class fenetrequitter
+class FenetreQuitter : public QWidget
 {
-public:
-    fenetrequitter();
-};
+    Q_OBJECT
 
-#endif // FENETREQUITTER_H
+    public:
+    FenetreQuitter();
+
+    public slots :
+
+
+    private:
+    QPushButton *m_quitter;
+    QLabel *m_texteQuitter;
+
+};
+#endif

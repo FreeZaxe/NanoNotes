@@ -4,11 +4,14 @@ SOURCES += \
     main.cpp \
     menu.cpp \
     nouvellenote.cpp \
-    randomthings.cpp
+    premiereouverture.cpp \
+    quitter.cpp
 
 HEADERS += \
     menu.h \
-    nouvellenote.h
+    nouvellenote.h \
+    premiereouverture.h \
+    quitter.h
 
 FORMS +=
 
