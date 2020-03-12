@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
 
         if(i==1)    //si le programme n'a jamais été ouvert, on ouvre la fenêtre de première ouverture
         {
-            i -= 1;
+            i = 1;
             std::ofstream firstOpening(fichierFirstOp.c_str());
             firstOpening << i;
             firstOpening.close();

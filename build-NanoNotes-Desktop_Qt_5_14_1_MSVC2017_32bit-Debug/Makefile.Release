@@ -579,7 +579,14 @@ release\moc_premiereouverture.cpp: ..\NanoNotes\premiereouverture.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qguiapplication.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qinputmethod.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QLabel \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qlabel.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QWidget \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QPushButton \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
 		release\moc_predefs.h \
 		C:\Qt\5.14.1\msvc2017\bin\moc.exe
 	C:\Qt\5.14.1\msvc2017\bin\moc.exe $(DEFINES) --compiler-flavor=msvc --include H:/GitKraken/NanoNotes/build-NanoNotes-Desktop_Qt_5_14_1_MSVC2017_32bit-Debug/release/moc_predefs.h -IC:/Qt/5.14.1/msvc2017/mkspecs/win32-msvc -IH:/GitKraken/NanoNotes/NanoNotes -IC:/Qt/5.14.1/msvc2017/include -IC:/Qt/5.14.1/msvc2017/include/QtWidgets -IC:/Qt/5.14.1/msvc2017/include/QtGui -IC:/Qt/5.14.1/msvc2017/include/QtANGLE -IC:/Qt/5.14.1/msvc2017/include/QtCore -I. -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\ATLMFC\include" -I"C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\include" -I"C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt" -I"C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\cppwinrt" ..\NanoNotes\premiereouverture.h -o release\moc_premiereouverture.cpp
@@ -848,6 +855,7 @@ release\main.obj: ..\NanoNotes\main.cpp ..\NanoNotes\menu.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\QTime \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qdatetime.h \
+		..\NanoNotes\premiereouverture.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\QPalette
 
 release\menu.obj: ..\NanoNotes\menu.cpp ..\NanoNotes\menu.h \
@@ -1260,7 +1268,20 @@ release\premiereouverture.obj: ..\NanoNotes\premiereouverture.cpp ..\NanoNotes\p
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qtouchdevice.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qguiapplication.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qinputmethod.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QWidget
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QLabel \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qlabel.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QWidget \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QPushButton \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qpushbutton.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
+		..\NanoNotes\menu.h \
+		C:\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
+		C:\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
+		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
+		C:\Qt\5.14.1\msvc2017\include\QtCore\QTime \
+		C:\Qt\5.14.1\msvc2017\include\QtCore\qdatetime.h
 
 release\quitter.obj: ..\NanoNotes\quitter.cpp ..\NanoNotes\quitter.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QApplication \
