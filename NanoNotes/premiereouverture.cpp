@@ -74,4 +74,5 @@ void PremiereOuverture::demarer()
 {
     Menu *fenetreMenu = new Menu;
     fenetreMenu->show();
+    close();
 }

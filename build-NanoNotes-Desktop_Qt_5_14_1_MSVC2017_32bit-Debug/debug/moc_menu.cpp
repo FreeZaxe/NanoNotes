@@ -36,11 +36,11 @@ QT_MOC_LITERAL(0, 0, 4), // "Menu"
 QT_MOC_LITERAL(1, 5, 10), // "ouvrirNote"
 QT_MOC_LITERAL(2, 16, 0), // ""
 QT_MOC_LITERAL(3, 17, 13), // "ouvrirFenQuit"
-QT_MOC_LITERAL(4, 31, 10) // "UpdateTime"
+QT_MOC_LITERAL(4, 31, 10) // "updateTime"
 
     },
     "Menu\0ouvrirNote\0\0ouvrirFenQuit\0"
-    "UpdateTime"
+    "updateTime"
 };
 #undef QT_MOC_LITERAL
 
@@ -78,7 +78,7 @@ void Menu::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, void *
         switch (_id) {
         case 0: _t->ouvrirNote(); break;
         case 1: _t->ouvrirFenQuit(); break;
-        case 2: _t->UpdateTime(); break;
+        case 2: _t->updateTime(); break;
         default: ;
         }
     }

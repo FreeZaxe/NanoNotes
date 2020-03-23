@@ -1,5 +1,6 @@
 #include "nouvellenote.h"
 #include "quitter.h"
+#include "menu.h"
 
 #include <string>
 #include <sstream>
@@ -165,6 +166,10 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
         nbrSauvegardes << n; //remplace l'ancien numéro par le nouveau pour que la prochaine sauvegarde est un nom différent
 
         nbrSauvegardes.close();
+
+        Menu *fenetreMenu = new Menu;   //recrée une fenêtre menu et ferme la fenetre de nouvelle note
+        fenetreMenu->show();
+        close();
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
     }
     else

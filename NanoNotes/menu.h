@@ -23,14 +23,14 @@ class Menu : public QWidget
     private:
     QPushButton *m_nouvelleNote;
     QPushButton *m_quitter;
-    QTimer *timer_1s;
+    QTimer *m_timer;
 
     QLabel *m_clock;
     QLabel *m_ouvrirNote;
     QLabel *m_nanoNoteTexte;
 
     private slots:
-    void UpdateTime();
+    void updateTime();
 
 };
 #endif

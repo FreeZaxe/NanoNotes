@@ -2,10 +2,14 @@
 #include "nouvellenote.h"
 #include "quitter.h"
 
+#include <sstream>
+#include <iostream>
+#include <fstream>
 #include <QApplication>
 #include <QLabel>
 #include <QTimer>
 #include <QTime>
+
 
 Menu::Menu() : QWidget()
 {
@@ -28,14 +32,20 @@ Menu::Menu() : QWidget()
     m_nouvelleNote->move(290, 650);
     m_nouvelleNote->setFixedWidth(500);
     m_nouvelleNote->setToolTip("Crée une nouvelle Note");
-    QObject::connect(m_nouvelleNote, SIGNAL(clicked()), this, SLOT(ouvrirNote())); //connecte le bouton à la fonction ouvrirNote
+    QObject::connect(m_nouvelleNote, &QPushButton::clicked, this, [this](){
+        this->ouvrirNote();
+
+
+    }); //connecte le bouton à la fonction ouvrirNote
     //------------------------------------------------------
 
     //--------------------Horloge-------------------------
 
-    timer_1s = new QTimer(this);
-    QObject::connect(timer_1s, SIGNAL(timeout()), this, SLOT(UpdateTime()));
-    timer_1s->start(1000);
+    m_timer = new QTimer(this);
+    QObject::connect(m_timer, &QTimer::timeout, this, [this](){
+        this->updateTime();
+    });
+    m_timer->start(1000);
 
     //- - - - - - - - - - Affichage - - - - - - - - - - - - -
     m_clock = new QLabel("Test", this);
@@ -66,9 +76,31 @@ Menu::Menu() : QWidget()
     });
     //-----------------------------------------------
 
+
+    //----------système de gestion des notes------------
+
+
+    std::string const fichierNombreSauvegarde("debug/sauvegardes/nbrSaves.txt");
+    std::ifstream nbrSauvegardes(fichierNombreSauvegarde.c_str());
+
+    if(nbrSauvegardes)
+    {
+        //- - - - - - - - - - - - - - - - Sauvegarde - - - - - - - - - - - - - - - - - - - - - -
+        std::string nString;
+        nbrSauvegardes >> nString;  //prend le numéro du nombre de notes
+
+        int n;
+        std::istringstream(nString) >> n;   //le transforme en int
+
+        n -= 1; //enlève 1 car le numéro représente celui de la prochaine note
+        nbrSauvegardes.close(); //ferme le fichier pour éviter les erreurs
+
+    }
+    //--------------------------------------------------
+
 }
 
-void Menu::UpdateTime()
+void Menu::updateTime()
 {
     this->m_clock->setText(QTime::currentTime().toString("hh:mm:ss"));
 }
@@ -77,6 +109,7 @@ void Menu::ouvrirNote() //fonction ouvrirNote, ouvre la fenêtre de création d'
 {
     NouvelleNote *fenetreNote = new NouvelleNote;
     fenetreNote->show();
+    close();
 
 }
 
