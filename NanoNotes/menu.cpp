@@ -9,12 +9,13 @@
 #include <QLabel>
 #include <QTimer>
 #include <QTime>
-
+#include <QTabWidget>
 
 Menu::Menu() : QWidget()
 {
     setFixedSize(1080,720); //fixe la taille de la fenêtre
     //showMaximized()  //pour mettre en fullscreen
+    setWindowIcon(QIcon("debug/assets/icon.png")); //change l'icone de la fenêtre
 
 
 
@@ -80,12 +81,16 @@ Menu::Menu() : QWidget()
     //----------système de gestion des notes------------
 
 
+
+
+    //- - - - - - - - - - Récupération nombre de sauvegardes - - - - - - - - - - -
+
     std::string const fichierNombreSauvegarde("debug/sauvegardes/nbrSaves.txt");
     std::ifstream nbrSauvegardes(fichierNombreSauvegarde.c_str());
 
     if(nbrSauvegardes)
     {
-        //- - - - - - - - - - - - - - - - Sauvegarde - - - - - - - - - - - - - - - - - - - - - -
+
         std::string nString;
         nbrSauvegardes >> nString;  //prend le numéro du nombre de notes
 
@@ -96,6 +101,25 @@ Menu::Menu() : QWidget()
         nbrSauvegardes.close(); //ferme le fichier pour éviter les erreurs
 
     }
+    else
+    {
+        std::cout << "ERREUR [1.2] : Impossible de lire le fichier du nombre de sauvegarde afin de les afficher dans le menu." << std::endl ;
+
+    }
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+    //- - - - - - - - - - - - - - - - Zone de notes - - - - - - - - - - - - - - -
+
+    m_zoneNotes = new QTabWidget(this);
+
+
+
+
+
+    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
     //--------------------------------------------------
 
 }

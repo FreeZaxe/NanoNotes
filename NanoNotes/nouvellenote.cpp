@@ -17,7 +17,7 @@
 NouvelleNote::NouvelleNote() : QWidget()
 {
     setFixedSize(720,480);
-
+    setWindowIcon(QIcon("debug/assets/icon.png"));
 
     //--------------bouton de sauvegarde-------------
     m_sauvegarder = new QPushButton("Sauvegarder", this);
@@ -153,7 +153,7 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
         }
         else
         {
-            std::cout << "ERREUR [2] : Impossible d'ouvrir le fichier pour creer une nouvelle sauvegarde." << std::endl;
+            std::cout << "ERREUR [2] : Impossible d'ouvrir un nouveau fichier pour creer une nouvelle sauvegarde." << std::endl;
         }
 
         //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -174,7 +174,7 @@ void NouvelleNote::sauvegarder() //fonction pour sauvegarder les notes
     }
     else
     {
-        std::cout << "ERREUR [1] : Impossible d'ouvrir le fichier pour lire le nombre de sauvegardes." << std::endl;
+        std::cout << "ERREUR [1.1] : Impossible d'ouvrir le fichier pour lire le nombre de sauvegardes afin de créer une nouvelle note." << std::endl;
     }
 
 }

@@ -8,6 +8,7 @@
 PremiereOuverture::PremiereOuverture()
 {
     setFixedSize(1080,720);
+    setWindowIcon(QIcon("debug/assets/icon.png"));
 
     //---------------labels informations--------------------
 

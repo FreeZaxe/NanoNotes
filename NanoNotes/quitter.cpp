@@ -3,6 +3,7 @@
 FenetreQuitter::FenetreQuitter()
 {
     setFixedSize(360, 200);
+    setWindowIcon(QIcon("debug/assets/icon.png"));
 
 
     //---------------bouton pour quitter-------------

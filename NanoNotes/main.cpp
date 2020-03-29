@@ -17,7 +17,9 @@
 //----------------------------------
 
 //-------------ERREURS--------------
-
+    //[1] : fichier nombre sauvegarde
+    //[2] : fichier d'une nouvelle sauvegarde
+    //[3] : fichier première ouverture
 //----------------------------------
 
 
