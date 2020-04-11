@@ -2,10 +2,12 @@
 #include "nouvellenote.h"
 #include "quitter.h"
 
+#include <string>
 #include <sstream>
 #include <iostream>
 #include <fstream>
 #include <QApplication>
+#include <QTextEdit>
 #include <QLabel>
 #include <QTimer>
 #include <QTime>
@@ -16,6 +18,8 @@ Menu::Menu() : QWidget()
     setFixedSize(1080,720); //fixe la taille de la fenêtre
     //showMaximized()  //pour mettre en fullscreen
     setWindowIcon(QIcon("debug/assets/icon.png")); //change l'icone de la fenêtre
+
+
 
 
 
@@ -81,10 +85,6 @@ Menu::Menu() : QWidget()
     //----------système de gestion des notes------------
 
 
-
-
-    //- - - - - - - - - - Récupération nombre de sauvegardes - - - - - - - - - - -
-
     std::string const fichierNombreSauvegarde("debug/sauvegardes/nbrSaves.txt");
     std::ifstream nbrSauvegardes(fichierNombreSauvegarde.c_str());
 
@@ -100,25 +100,67 @@ Menu::Menu() : QWidget()
         n -= 1; //enlève 1 car le numéro représente celui de la prochaine note
         nbrSauvegardes.close(); //ferme le fichier pour éviter les erreurs
 
+        int x = 50; //valeur de position horizontale des appercus de notes
+        int y = 150; //valeur de position verticale des appercus de notes
+
+        int nu = 0; //numéro de la note, on ne peut pas utiliser i pcq ca fait de la merde
+
+        for (int i = -1; i<n; i++)
+        {
+
+            std::string nuString = std::to_string(nu);
+
+            //- - - - - - Zone de texte - - - - - - - -
+            m_appNote = new QTextEdit(this);
+            m_appNote->resize(150,150);
+            m_appNote->move(x,y);
+            m_appNote->setReadOnly(true);
+            //- - - - - - - - - - - - - - - - - - - - -
+
+            //- - - - Récupération du contenu de la note - - - - - -
+
+            std::string fichierNote("debug/sauvegardes/save");
+            fichierNote += nuString;
+            fichierNote += ".txt";
+
+            //std::cout << fichierNote << std::endl;    //juste pour débug
+
+            std::ifstream contenuNote(fichierNote.c_str());
+
+            if(contenuNote)
+            {
+                std::string cNote;
+                getline(contenuNote, cNote);    //on récupère toute la note car elle ne se stocke que sur une ligne dans le txt (par contre si l'utilisateur
+                                                //fait lui même un saut de ligne ca ne marche pas il faut trouver une solution
+
+                QString note = QString::fromStdString(cNote);   //on transforme la variable string en Qstring
+
+                m_appNote->setText(note); //on met le texte des notes dans les cases
+            }
+            else
+            {
+                std::cout << "ERREUR [4] : Impossible de lire le fichier d'une ou des sauvegardes." << std::endl ;
+            }
+            //- - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+            if(x >= 850)    //fait en sorte que les carrés se remettent plus bas quand ya plus de place
+            {
+                y += 200;
+                x = -150;
+            }
+
+            x += 200;
+            nu += 1;
+        }
+
+
     }
     else
     {
         std::cout << "ERREUR [1.2] : Impossible de lire le fichier du nombre de sauvegarde afin de les afficher dans le menu." << std::endl ;
 
     }
-
-    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-    //- - - - - - - - - - - - - - - - Zone de notes - - - - - - - - - - - - - - -
-
-    m_zoneNotes = new QTabWidget(this);
-
-
-
-
-
-    //- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
 
     //--------------------------------------------------
 

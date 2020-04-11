@@ -20,10 +20,12 @@ class NouvelleNote : public QWidget
     void sauvegarder();
     void changerCouleur(int r, int g, int b);
     void ouvrirFenQuit();
+    void retourMenu();
 
     private:
     QPushButton *m_sauvegarder;
     QPushButton *m_quitter;
+    QPushButton *m_retour;
     QTextEdit *m_note;
     QFontComboBox *m_boitePolice;
 

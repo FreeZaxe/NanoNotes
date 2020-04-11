@@ -44,6 +44,18 @@ NouvelleNote::NouvelleNote() : QWidget()
     });
     //-----------------------------------------------
 
+    //---------------bouton de retour----------------
+    m_retour = new QPushButton("Retour au menu", this);
+
+    m_retour->setCursor(Qt::PointingHandCursor);
+    m_retour->setToolTip("Vous rèmene sur le menu du logiciel");
+    m_retour->move(580,50);
+
+    QObject::connect(m_retour, &QPushButton::clicked, this, [this](){
+        this->retourMenu();
+    });
+    //-----------------------------------------------
+
 
     //----------------Zone de texte------------------
     m_note = new QTextEdit(this);
@@ -191,4 +203,11 @@ void NouvelleNote::ouvrirFenQuit() //fonction qui ouvre une fenetre pour demande
 {
     FenetreQuitter *fenetreQuitter = new FenetreQuitter;
     fenetreQuitter->show();
+}
+
+void NouvelleNote::retourMenu()
+{
+    Menu *fenetreMenu = new Menu;
+    fenetreMenu->show();
+    close();
 }
