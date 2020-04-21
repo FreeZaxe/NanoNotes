@@ -8,6 +8,7 @@
 #include <QLabel>
 #include <QTimer>
 #include <QTime>
+#include<QTabWidget>
 
 
 
@@ -30,8 +31,10 @@ class Menu : public QWidget
     QLabel *m_clock;
     QLabel *m_ouvrirNote;
     QLabel *m_nanoNoteTexte;
+    QLabel *m_pasDeNotes;
 
     QTextEdit *m_appNote;
+    QTabWidget *m_tabNotes;
 
     private slots:
     void updateTime();

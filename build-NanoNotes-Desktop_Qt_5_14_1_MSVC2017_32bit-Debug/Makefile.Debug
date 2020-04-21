@@ -310,9 +310,17 @@ debug\moc_menu.cpp: ..\NanoNotes\menu.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTextEdit \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextdocument.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextcursor.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextformat.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QLabel \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qlabel.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
@@ -850,9 +858,17 @@ debug\main.obj: ..\NanoNotes\main.cpp ..\NanoNotes\menu.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTextEdit \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextdocument.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextcursor.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextformat.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QLabel \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qlabel.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
@@ -979,9 +995,17 @@ debug\menu.obj: ..\NanoNotes\menu.cpp ..\NanoNotes\menu.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qpushbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTextEdit \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextdocument.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextcursor.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextformat.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QLabel \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qlabel.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qframe.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \
@@ -990,14 +1014,6 @@ debug\menu.obj: ..\NanoNotes\menu.cpp ..\NanoNotes\menu.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTabWidget \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtabwidget.h \
 		..\NanoNotes\nouvellenote.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTextEdit \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtextedit.h \
-		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
-		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextdocument.h \
-		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
-		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextcursor.h \
-		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextformat.h \
-		C:\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QFontComboBox \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qfontcombobox.h \
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qcombobox.h \
@@ -1290,6 +1306,14 @@ debug\premiereouverture.obj: ..\NanoNotes\premiereouverture.cpp ..\NanoNotes\pre
 		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractbutton.h \
 		C:\Qt\5.14.1\msvc2017\include\QtGui\qicon.h \
 		..\NanoNotes\menu.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\QTextEdit \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qtextedit.h \
+		C:\Qt\5.14.1\msvc2017\include\QtWidgets\qabstractscrollarea.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextdocument.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextoption.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextcursor.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qtextformat.h \
+		C:\Qt\5.14.1\msvc2017\include\QtGui\qpen.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\QTimer \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qtimer.h \
 		C:\Qt\5.14.1\msvc2017\include\QtCore\qbasictimer.h \

@@ -33,8 +33,10 @@ Menu::Menu() : QWidget()
     //----------------bouton de nouvelle note---------------
     m_nouvelleNote = new QPushButton("Nouvelle note", this);
 
+    int yNouvelleNote = 650;
+
     m_nouvelleNote->setCursor(Qt::PointingHandCursor); //change le type curseur
-    m_nouvelleNote->move(290, 650);
+    m_nouvelleNote->move(290, yNouvelleNote);
     m_nouvelleNote->setFixedWidth(500);
     m_nouvelleNote->setToolTip("Crée une nouvelle Note");
     QObject::connect(m_nouvelleNote, &QPushButton::clicked, this, [this](){
@@ -84,7 +86,6 @@ Menu::Menu() : QWidget()
 
     //----------système de gestion des notes------------
 
-
     std::string const fichierNombreSauvegarde("debug/sauvegardes/nbrSaves.txt");
     std::ifstream nbrSauvegardes(fichierNombreSauvegarde.c_str());
 
@@ -105,8 +106,17 @@ Menu::Menu() : QWidget()
 
         int nu = 0; //numéro de la note, on ne peut pas utiliser i pcq ca fait de la merde
 
+        if(n <= -1) //si il n'y a pas de notes, ce texte l'affiche
+        {
+            m_pasDeNotes = new QLabel("Vous n'avez pas encore de notes !", this);
+            m_pasDeNotes->move(450,360);
+            m_pasDeNotes->setFixedWidth(500);
+            m_pasDeNotes->setStyleSheet("font-weight: bold; color: black");
+        }
+
         for (int i = -1; i<n; i++)
         {
+
 
             std::string nuString = std::to_string(nu);
 
@@ -144,7 +154,14 @@ Menu::Menu() : QWidget()
             //- - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
-            if(x >= 850)    //fait en sorte que les carrés se remettent plus bas quand ya plus de place
+            if(x >= 850 && y > 350)    //fait en sorte que les carrés se remettent plus bas quand ya plus de place
+            {
+                y += 200;
+                x = -150;
+                yNouvelleNote += 200;
+                m_nouvelleNote->move(290, yNouvelleNote);
+            }
+            else if (x >= 850)
             {
                 y += 200;
                 x = -150;

@@ -23,15 +23,17 @@ PremiereOuverture::PremiereOuverture()
 
     //_1_
 
-    m_ligne1 = new QLabel("NanoNote est un éditeur de notes gratuit et simple d'utilisation", this);
+    m_ligne1 = new QLabel("NanoNote est un éditeur de notes gratuit et simple d'utilisation.", this);
     m_ligne1->move(280, 150);
     m_ligne1->setFont(QFont("Montserrat", 12));
+    m_ligne1->setAlignment(Qt::AlignCenter);
 
     //_2_
 
-    m_ligne2 = new QLabel("Il vous permet de prendre des notes courtes ou longues, puis de les sauvegarder pour ne plus les oublier", this);
+    m_ligne2 = new QLabel("Il vous permet de prendre des notes courtes ou longues, puis de les sauvegarder pour ne plus les oublier <br/>  ", this);
     m_ligne2->move(120, 180);
     m_ligne2->setFont(QFont("Montserrat", 12));
+    m_ligne2->setAlignment(Qt::AlignCenter);
 
     //_3_
 

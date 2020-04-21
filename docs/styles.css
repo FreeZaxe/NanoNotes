@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+
+body
+{
+    background-color: #303030;
+}
+
+.logo
+{
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-top: 1%;
+}
+
+.bandeau
+{   
+    display: flex;
+    background-color: #f0f0f0;
+    margin: 1% 5%;
+    border-radius: 10px;
+    height: 110px;
+    
+}
+
+.texte
+{
+    background-color: #404040;
+    border-radius: 15px;
+    width: 60%;
+    height: 300px;
+    padding-left: 3%;
+    padding-right: 5%;
+    padding-top: 1%;
+
+    margin-left: 15%;
+    margin-top: 5%;
+    margin-bottom: 5%;
+
+}
+
+.texte p
+{
+    color: #e5e5e5;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 200%;
+    margin-top: 4%;
+    text-align: center;
+}
+
+#selected
+{
+    background-color: #c2c2c2;
+    border-radius: 15px;
+    height: 50%;
+}
+
+#github
+{
+    color: #c2c2c2;
+    font-size: 400%;
+    margin-left: 12%;
+    flex: 2;
+}
+
+#github:hover
+{
+    color: #3187C6;
+}
+
+#logoGithub
+{
+    height: 400px;
+    flex: 1;
+}
+
+#logoQt
+{
+    height: 350px;
+    margin-top: 10px;
+    flex: 1;
+}
+
+li
+{
+    color: #e5e5e5;
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 2em;
+    margin-top: 5%;
+    
+}
+
+h1
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-size: 4em;
+    margin-right: 10%;
+    margin-top: 1%;
+    color: #3187C6;
+
+}
+
+div
+{
+    display: flex;
+}
+
+div a
+{
+    font-family: 'Montserrat Alternates', sans-serif;
+    color: #404040;
+    text-decoration: none;
+    font-size: 250%;
+    margin-right: 3%;
+    margin-top: 2%;
+}
+
+div a:hover
+{
+    color: #3187C6;
+}
+
