@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
 
 /* GENERAL */
 body
 {
-    background-color: #303030;
+    background-color: #222;
 }
 
 *
@@ -15,17 +15,25 @@ body
 
 h1
 {
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Quicksand', sans-serif;
     font-size: 70px;
     color: #3187C6;
 
+}
+
+p
+{
+    font-family: 'Quicksand', sans-serif;
+    font-size: 20px;
+    color: #ccc;
+    text-align: center;
 }
 
 a
 {
     text-decoration: none;
     color: #111;
-    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 a:hover
@@ -35,15 +43,16 @@ a:hover
 
 a:active
 {
-    color: #3663d3;
+    color: #47b6e2;
 }
 
 .wrapper
 {
-    width: 98%;
+    width: 99%;
     margin: 0px auto;
     padding: 0px 10px;
     display: flex;
+    
 }
 
 #logo
@@ -54,33 +63,39 @@ a:active
 }
 
 
-
-
-
 /* HEADER */
 
 header
 {   
     background-color: #f0f0f0;
+    border: solid 2px #222;
     height: 100px;
     width: 98%;
 
     border-radius: 10px;
-    margin: 20px auto;
+    margin: 40px auto;
     
+    position: sticky;
+    top: 20px;
+    z-index: 2;
 }
 
 header .nanonote
 {
     flex: 1;
     display: flex;
-    margin-top: 10px;
+    margin-top: 5px;    
+}
+
+header img
+{
+    margin-top: 5px;
 }
 
 header nav ul li
 {
     display: inline-block;
-    margin-top: 25px;
+    margin-top: 30px;
     margin-right: 10px;
 }
 
@@ -97,9 +112,71 @@ header ul
     list-style: none;
 }
 
+/* BREACKING NEWS */
+
+
+
+
+
+
+
+
+
 /* PRESENTATION */
 
 #presentation
 {
-    margin-top: 1800px;
+    margin: 20px auto;
+
+
+}
+
+#presentation img
+{
+    margin: 50px 50px;
+    width: 30%;
+    height: 30%;
+}
+
+#presentation p
+{
+    margin-top: 100px;
+
+}
+
+
+
+/*  DOWNLOAD */
+
+#download
+{
+
+
+}
+
+
+
+/*  CONTACT */
+
+#contact
+{
+    margin-top: 2000px;
+}
+
+
+
+/*  FOOTER */
+
+footer
+{
+    width: 100%;
+    height: 200px;
+    background-color: #333;
+
+}
+
+footer a
+{
+    color: #ccc;
+
 }
