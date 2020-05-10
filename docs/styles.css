@@ -150,11 +150,46 @@ header ul
 
 #download
 {
-
+    height: 400px;
+    background-color: #1d1d1d;
 
 }
 
+#download #logoQt
+{
+    height: 300px;
+    width: 350px;
+    margin-top: 50px;
+}
 
+#download #logoGithub
+{
+    height: 350px;
+    margin-top: 25px;
+}
+
+#download p
+{
+    margin-top: 150px;
+
+}
+
+#download a
+{
+    background-color: #3187C6;
+    display: block;
+    font-size: 30px;
+    border-radius: 6px;
+    width: 300px;
+    height: 50px;
+    margin: 40px auto;
+    text-align: center;
+}
+
+#download a:hover
+{
+    background-color: #f0f0f0;
+}
 
 /*  CONTACT */
 
@@ -175,8 +210,18 @@ footer
 
 }
 
-footer a
+footer ul
+{   
+    margin-left: 42.3%;
+}
+
+footer ul li
+{
+    display: inline-block;
+}
+
+footer ul li a
 {
     color: #ccc;
-
+    margin-right: 10px;
 }
